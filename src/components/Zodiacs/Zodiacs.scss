@@ -1,0 +1,37 @@
+.zodiacs {
+    margin-top: 30px;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 30px;
+        margin-top: 30px;
+    }
+    &__item {
+        background: rgb(49, 46, 46);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border-radius: 20px;
+        padding: 20px;
+        &-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        &-title {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+        }
+        &-period {
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+    }
+    &__settings {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
