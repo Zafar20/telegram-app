@@ -11,7 +11,7 @@ bot.start((ctx) => {
       inline_keyboard: [
         [
           {
-            text: 'Open Web App',
+            text: 'Click to Open',
             web_app: { url: webLink }
           }
         ]
