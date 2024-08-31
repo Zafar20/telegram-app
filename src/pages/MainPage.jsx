@@ -17,7 +17,6 @@ const MainPage = () => {
     if (savedLanguage) {
       setLanguage(savedLanguage);
     }
-
      tg.expand();
   }, []);
 
@@ -26,6 +25,8 @@ const MainPage = () => {
     localStorage.setItem('appLanguage', language);
   }, [language]);
 
+
+  
 
 
   const { zodiacs } = useZodiacs()
