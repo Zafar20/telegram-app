@@ -5,19 +5,44 @@ const bot = new Telegraf(TOKEN);
 
 const webLink = 'https://telegram-app-gamma.vercel.app/';
 
+// Сообщения и тексты кнопок для разных языков
+const messages = {
+    'ru': {
+        welcome: 'Добро пожаловать:)))))',
+        button: 'Нажмите для открытия'
+    },
+    'es': {
+        welcome: 'Bienvenido :)))))',
+        button: 'Haz clic para abrir'
+    },
+    // добавьте другие языки здесь
+};
+
+const defaultMessages = {
+    welcome: 'Welcome :)))))',
+    button: 'Click to open'
+};
+
 bot.start((ctx) => {
-  ctx.reply('Welcome :)))))', {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: 'Open Web App',
-            web_app: { url: webLink }
-          }
-        ]
-      ]
-    }
-  });
+    // Определение языка пользователя
+    const languageCode = ctx.from.language_code;
+
+    // Получение сообщений и текста кнопки на основе языка
+    const { welcome, button } = messages[languageCode] || defaultMessages;
+
+    // Отправка сообщения с кнопкой
+    ctx.reply(welcome, {
+        reply_markup: {
+            inline_keyboard: [
+                [
+                    {
+                        text: button,
+                        web_app: { url: webLink }
+                    }
+                ]
+            ]
+        }
+    });
 });
 
 bot.launch();
