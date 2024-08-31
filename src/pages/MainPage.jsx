@@ -1,9 +1,12 @@
+import React from 'react'
+import Zodiacs from '../components/Zodiacs/Zodiacs'
 import { useEffect, useState } from 'react';
-import { RouterProvider } from 'react-router-dom';
-import { router } from './routes/routes';
+import { useZodiacs } from '../hooks/useZodiacs';
 
-const App = () => {
-   const [language, setLanguage] = useState('ru'); 
+const MainPage = () => {
+
+
+  const [language, setLanguage] = useState('ru'); 
 
   useEffect(() => {
     const tg = window.Telegram.WebApp;
@@ -36,27 +39,13 @@ const App = () => {
   
 
 
-  
+  const { zodiacs } = useZodiacs()
 
   return (
-    <>  
-    <div className="container">
-      
-      <div className='zodiacs'>
-          <div className="zodiacs__settings">
-            <h1>{language === 'en' ? 'Horoscopes' : 'Гороскопы'}</h1>
-            <select onChange={(e) => setLanguage(e.target.value)} value={language}>
-              <option value="en">English</option>
-              <option value="ru">Русский</option>
-            </select>
-          </div>
-          <RouterProvider router={router}/>
-      </div>
-    </div>
-   
+    <>
+      <Zodiacs zodiacs={zodiacs}/>
     </>
-   
-  );
-};
+  )
+}
 
-export default App;
+export default MainPage

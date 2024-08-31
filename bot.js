@@ -3,7 +3,7 @@ import { Telegraf } from "telegraf";
 const TOKEN = "7462210652:AAFFkIFBl9zTAf4ZXC9vaqeW3QqQKTG568I";
 const bot = new Telegraf(TOKEN);
 
-const web_link = "https://kaleidoscopic-conkies-202a3a.netlify.app/";
+const web_link = "https://telegram-app-gamma.vercel.app/";
 
 bot.start((ctx) =>
   ctx.reply("Welcome :)))))", {
