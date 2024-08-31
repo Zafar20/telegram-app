@@ -24,7 +24,7 @@ const MainPage = () => {
 
      // Опционально: можно установить минимальную высоту приложения через стили
     //  document.body.style.height = '100vh';
-     tg.BackButton.show()
+     tg.BackButton.hide()
 
   }, []);
 
